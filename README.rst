@@ -34,7 +34,7 @@ These error codes are emitted:
 +======+=============================================================+
 | O701 | osv.osv is deprecated, please use orm.Model                 |
 +------+-------------------------------------------------------------+
-| 0702 | osv.osv_memory is deprecated, please use orm.TransientModel |
+| O702 | osv.osv_memory is deprecated, please use orm.TransientModel |
 +------+-------------------------------------------------------------+
 | O703 | orm.Model class name should NOT use CapWords convention     |
 +------+-------------------------------------------------------------+
