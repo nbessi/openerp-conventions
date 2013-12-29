@@ -98,7 +98,7 @@ class OpenERPModelChecker(BaseChecker, ast.NodeVisitor):
 
     O701 = 'osv.osv is deprecated, please use orm.Model'
     O702 = 'osv.osv_memory is deprecated, please use orm.TransientModel'
-    O703 = 'orm.Model class name should not be camelcased but use uderscore'
+    O703 = 'orm.Model class name should NOT use CapWords conventiont'
 
     def make_error_tuple(self, code, node):
         """Make an error tuple used by flake8
