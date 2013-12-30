@@ -29,7 +29,7 @@ class BaseCheckerMeta(type):
 
     Checker have to be split by topic like class, manifest, init file etc.
 
-    Code is inpired from pep8-naming extention
+    Code is inspired from pep8-naming extention
 
     """
     def __init__(self, class_name, bases, namespace):
@@ -47,7 +47,7 @@ BaseChecker = BaseCheckerMeta('BaseChecker',
 class OpenERPConventionsChecker(object):
     """Check OpenERP conventions
 
-    It will call the function 'visit(root_node)' f all checker instances
+    It will call the function 'visit(root_node)' for all checker instances
     registered in BaseCheckerMeta
 
     """
