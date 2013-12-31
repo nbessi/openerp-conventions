@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""OpenERP community addons standard plugin for flake8"""
+"""OpenERP community orm.Model checker"""
 import re
 
 try:

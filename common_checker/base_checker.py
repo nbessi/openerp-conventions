@@ -16,11 +16,16 @@ class BaseCheckerMeta(type):
     """
     def __init__(self, class_name, bases, namespace):
         self.errors = []
+        self.filename = None
         try:
             self._checks.append(self())
         except AttributeError:
             self._checks = []
 
-BaseChecker = BaseCheckerMeta('BaseChecker',
-                              (object,),
-                              {'__doc__': "Base classfor conventions checks."})
+
+class BaseChecker(object):
+    "Base class for conventions checks."
+    __metaclass__ = BaseCheckerMeta
+
+    def set_filename(self, filename):
+        self.filename = filename
