@@ -48,6 +48,7 @@ class OpenERPConventionsChecker(object):
 
         """
         for check in self.checks:
+            check.set_filename(self.filename)
             check.visit(tree_root)
             for error in check.errors:
                 yield error
