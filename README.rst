@@ -13,7 +13,8 @@ You can install, upgrade, ``openerp-conventions`` with these commands::
 
   $ git clone git@github.com:nbessi/openerp-conventions.git
   $ cd openerp-conventions
-  $ python setup.py develop
+  $ path_to_python2 setup.py develop
+  (If you do not use a Python virtual env, it may require root permission)
 
 
 Plugin for Flake8
