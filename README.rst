@@ -41,7 +41,7 @@ These error codes are emitted:
 +------+-------------------------------------------------------------+
 | O603 | Manifest "licence" key is missing                           |
 +------+-------------------------------------------------------------+
-| O604 | Manifest licence should be %s' % AGPL                       |
+| O604 | Manifest licence should be AGPL-3                           |
 +------+-------------------------------------------------------------+
 | O701 | osv.osv is deprecated, please use orm.Model                 |
 +------+-------------------------------------------------------------+
