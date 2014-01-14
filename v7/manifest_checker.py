@@ -29,7 +29,7 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
     about visit/visitor behavior
 
     """
-    O600 = 'Warning unknow Manifest key'
+    O600 = 'Warning unknown Manifest key'
     O601 = 'Manifest "name" key is missing'
     O602 = 'Manifest "description" key is missing'
     O603 = 'Manifest "licence" key is missing'
