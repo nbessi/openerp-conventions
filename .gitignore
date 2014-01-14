@@ -1,1 +1,19 @@
+# Mac Files
+.DS_Store
+
+# Emacs Files
+*~
+*#*
+*flymake.py
+.ropeproject
+
+# Vim Files
+*.swp
+
+# Python Files
+*.egg
 *.egg-info
+*.pyc
+*prof*
+.noseids
+pip-log.txt
