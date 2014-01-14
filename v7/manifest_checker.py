@@ -101,7 +101,7 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
             if key not in ALLOWED_KEYS:
                 faulty_node = next(x for x in node.keys
                                    if ast.literal_eval(x) == key)
-            self.errors.append(self.make_error_tuple('O600', faulty_node))
+                self.errors.append(self.make_error_tuple('O600', faulty_node))
 
     def get_nodes_from_key(self, dict_node, lk_key):
         index = 0
