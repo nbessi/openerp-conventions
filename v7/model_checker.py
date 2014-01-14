@@ -32,14 +32,14 @@ class OpenERPModelChecker(BaseChecker, ast.NodeVisitor):
 
     O701 = 'osv.osv is deprecated, please use orm.Model'
     O702 = 'osv.osv_memory is deprecated, please use orm.TransientModel'
-    O703 = 'orm.Model class name should NOT use CapWords conventiont'
+    O703 = 'orm.Model class name should NOT use CapWords convention'
 
     def make_error_tuple(self, code, node):
         """Make an error tuple used by flake8
 
-        Uses input code to find corressponding property lookup
+        Uses input code to find corresponding property lookup
 
-        :param code: string of code number must be set as propety
+        :param code: string of code number must be set as property
         :param node: ast node source of error
 
         :returns: (line number, col, text, type)

@@ -5,13 +5,13 @@
 class BaseCheckerMeta(type):
     """Base checker type
     This will automatically register an instance of any checker subclass
-    into self._cheks. This will be used by OpenERPConventionsChecker
+    into self._checks. This will be used by OpenERPConventionsChecker
     to run all checkers. A checker must have a visit(root_node) function
     implemented.
 
     Checker have to be split by topic like class, manifest, init file etc.
 
-    Code is inspired from pep8-naming extention
+    Code is inspired from pep8-naming extension
 
     """
     def __init__(self, class_name, bases, namespace):
