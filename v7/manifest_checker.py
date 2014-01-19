@@ -31,7 +31,7 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
     about visit/visitor behavior
 
     """
-    O600 = 'Warning unknown Manifest key'
+    O600 = 'Warning unknown Manifest key (\'%s\')'
     O601 = 'Manifest "name" key is missing'
     O602 = 'Manifest "description" key is missing'
     O603 = 'Manifest "license" key is missing'
@@ -53,18 +53,19 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
     O618 = 'Manifest installable key should be a boolean'
     O619 = 'Manifest is not a valid RST'
 
-    def make_error_tuple(self, code, node):
+    def make_error_tuple(self, code, node, *str_format):
         """Make an error tuple used by flake8
 
         Uses input code to find corressponding property lookup
 
         :param code: string of code number must be set as propety
         :param node: ast node source of error
+        :param str_format: optional arguments for string formatting
 
         :returns: (line number, col, text, type)
 
         """
-        code_text = '%s %s' % (code, getattr(self, code))
+        code_text = ('%s %s' % (code, getattr(self, code))) % str_format
         return (node.lineno, node.col_offset, code_text, type(self))
 
     def generic_visit(self, node):
@@ -103,7 +104,8 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
             if key not in ALLOWED_KEYS:
                 faulty_node = next(x for x in node.keys
                                    if ast.literal_eval(x) == key)
-                self.errors.append(self.make_error_tuple('O600', faulty_node))
+                self.errors.append(self.make_error_tuple('O600', faulty_node,
+                                                         key))
 
     def get_nodes_from_key(self, dict_node, lk_key):
         index = 0
