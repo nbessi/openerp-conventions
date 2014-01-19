@@ -6,7 +6,7 @@ import common_checker
 from common_checker.base_checker import BaseChecker
 
 # When OpenERP version 8 API will be frozen
-# We wille be able to do version toggle here
+# We will be able to do version toggle here
 import v7
 
 __version__ = '0.0.1'
@@ -33,7 +33,6 @@ class OpenERPConventionsChecker(object):
         self.tree = tree if tree else ()
         self.filename = filename
         self.checks = BaseChecker._checks
-
 
     def run(self):
         """Run the checks"""

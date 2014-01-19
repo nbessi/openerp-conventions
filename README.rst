@@ -33,15 +33,15 @@ These error codes are emitted:
 +------+-------------------------------------------------------------+
 | code | sample message                                              |
 +======+=============================================================+
-| O600 |Warning unknow manifest key                                  |
+| O600 | Warning unknown manifest key                                |
 +------+-------------------------------------------------------------+
 | O601 | Manifest "name" key is missing                              |
 +------+-------------------------------------------------------------+
 | O602 | Manifest "description" key is missing                       |
 +------+-------------------------------------------------------------+
-| O603 | Manifest "licence" key is missing                           |
+| O603 | Manifest "license" key is missing                           |
 +------+-------------------------------------------------------------+
-| O604 | Manifest licence should be AGPL-3                           |
+| O604 | Manifest license should be AGPL-3                           |
 +------+-------------------------------------------------------------+
 | O701 | osv.osv is deprecated, please use orm.Model                 |
 +------+-------------------------------------------------------------+
