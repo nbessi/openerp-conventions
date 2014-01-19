@@ -14,7 +14,9 @@ AGPL = 'AGPL-3'
 
 ALLOWED_KEYS = ['name', 'version', 'author',
                 'maintainer', 'category', 'complexity',
-                'depends', 'description', 'website, st',
+                'depends', 'description', 'website',
+                'summary', 'external_dependencies',
+                'data', 'demo', 'test',
                 'installable', 'auto_install',
                 'license', 'application',
                 'images', 'icon', 'web',
