@@ -103,7 +103,7 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
             if key not in ALLOWED_KEYS:
                 faulty_node = next(x for x in node.keys
                                    if ast.literal_eval(x) == key)
-            self.errors.append(self.make_error_tuple('O600', faulty_node))
+                self.errors.append(self.make_error_tuple('O600', faulty_node))
 
     def get_nodes_from_key(self, dict_node, lk_key):
         index = 0
@@ -111,11 +111,15 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
             if ast.literal_eval(key) == lk_key:
                 return (key, dict_node.values[index])
             index += 1
-        return None
+        return None, None
 
-    def check_licence_value(self, node, manifest_dict):
-        if manifest_dict.get('licence') != AGPL:
-            key, val = self.get_nodes_from_key(node, 'licence')
+    def check_license_value(self, node, manifest_dict):
+        """Check if license is AGPL, if it exists"""
+        # Default to AGPL since, we don't need to
+        # report a bad license if it doesn't exist
+        # instead it will be reported by 0603
+        if manifest_dict.get('license', AGPL) != AGPL:
+            key, val = self.get_nodes_from_key(node, 'license')
             self.errors.append(self.make_error_tuple('O604', val))
 
     def visit_Dict(self, node):
@@ -125,4 +129,4 @@ class OpenERPManifestChecker(BaseChecker, ast.NodeVisitor):
         self.ensure_key(node, manifest_dict, 'name', 'O601')
         self.ensure_key(node, manifest_dict, 'description', 'O602')
         self.ensure_key(node, manifest_dict, 'license', 'O603')
-        self.check_licence_value(node, manifest_dict)
+        self.check_license_value(node, manifest_dict)
