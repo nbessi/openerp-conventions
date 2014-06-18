@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'dummy': 'dummy_val',
+{'name': 'dummy_val',
  'dummy2': 'dummy_val2',
  'license': 'faulty',
-}
+ }
