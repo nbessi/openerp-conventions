@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #Taken from pep8-naming flake8 extention
 from __future__ import with_statement
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def get_version(fname='openerp_conventions.py'):
     with open(fname) as f:
@@ -29,6 +29,7 @@ setup(
     url='TODO',
     license='Expat license',
     py_modules=['openerp_conventions'],
+    packages=find_packages(),
     zip_safe=False,
     entry_points={
         'flake8.extension': [
