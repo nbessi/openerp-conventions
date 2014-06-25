@@ -1,0 +1,12 @@
+# Config file .travis.yml
+
+language: python
+
+python:
+    - "2.7"
+
+# Depends on flake 8
+install:
+    - pip install flake8
+script:
+    - python run_tests.py
